@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.2 on win32)" generated="20190527 22:00:57.280" rpa="false">
+<suite id="s1" name="Spectral Debug Level 24" source="E:\learn\robot\FSS_TEST\spectral_debug_level_24\spectral_debug_level_24.robot">
+<kw name="Open Connection And Log In" type="setup">
+<kw name="Open Connection" library="Telnet">
+<doc>Opens a new Telnet connection to the given host and port.</doc>
+<arguments>
+<arg>${AC_IP}</arg>
+<arg>port=${AC_PORT}</arg>
+</arguments>
+<msg timestamp="20190527 22:00:57.346" level="INFO">Opening connection to 172.30.103.194:23 with prompt: (&gt;|#)$ (regexp)</msg>
+<status status="PASS" starttime="20190527 22:00:57.346" endtime="20190527 22:00:57.356"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>chr(int(3))</arg>
+</arguments>
+<assign>
+<var>${CTRL_C}</var>
+</assign>
+<msg timestamp="20190527 22:00:57.356" level="INFO">${CTRL_C} = </msg>
+<status status="PASS" starttime="20190527 22:00:57.356" endtime="20190527 22:00:57.356"></status>
+</kw>
+<kw name="Set Timeout" library="Telnet">
+<doc>Sets the timeout used for waiting output in the current connection.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:00:57.357" endtime="20190527 22:00:57.357"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20190527 22:00:58.357" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190527 22:00:57.357" endtime="20190527 22:00:58.357"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>${CTRL_C}</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:00:58.358" endtime="20190527 22:00:58.359"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190527 22:00:58.361" level="INFO">WS5308#</msg>
+<status status="PASS" starttime="20190527 22:00:58.359" endtime="20190527 22:00:58.362"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>co</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:00:58.362" endtime="20190527 22:00:58.378"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>ap-config ${AP_MAC}</arg>
+</arguments>
+<msg timestamp="20190527 22:00:58.397" level="INFO">WS5308#co</msg>
+<status status="PASS" starttime="20190527 22:00:58.378" endtime="20190527 22:00:58.398"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 1</arg>
+</arguments>
+<msg timestamp="20190527 22:00:58.627" level="INFO">Enter configuration commands, one per line.  End with CNTL/Z.</msg>
+<status status="PASS" starttime="20190527 22:00:58.398" endtime="20190527 22:00:58.627"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 2</arg>
+</arguments>
+<msg timestamp="20190527 22:00:58.659" level="INFO">WS5308(config)#ap-config 00d0.f822.334c</msg>
+<status status="PASS" starttime="20190527 22:00:58.627" endtime="20190527 22:00:58.660"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 3</arg>
+</arguments>
+<msg timestamp="20190527 22:00:58.727" level="INFO">You are going to config AP(AP740-I-newFlash), which is online now.</msg>
+<status status="PASS" starttime="20190527 22:00:58.661" endtime="20190527 22:00:58.728"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>spectral enable radio 1</arg>
+</arguments>
+<msg timestamp="20190527 22:00:58.959" level="INFO">WS5308(config-ap)#no spectral enable radio 1</msg>
+<status status="PASS" starttime="20190527 22:00:58.728" endtime="20190527 22:00:58.959"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190527 22:00:59.159" level="INFO">WS5308(config-ap)#no spectral enable radio 2
+WS5308(config-ap)#no spectral enable radio 3
+WS5308(config-ap)#spectral enable radio 1
+WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190527 22:00:58.959" endtime="20190527 22:00:59.160"></status>
+</kw>
+<kw name="Open Connection" library="Telnet">
+<doc>Opens a new Telnet connection to the given host and port.</doc>
+<arguments>
+<arg>${AP_IP}</arg>
+<arg>port=${AP_PORT}</arg>
+</arguments>
+<msg timestamp="20190527 22:00:59.160" level="INFO">Opening connection to 172.30.103.147:23 with prompt: (&gt;|#)$ (regexp)</msg>
+<status status="PASS" starttime="20190527 22:00:59.160" endtime="20190527 22:00:59.161"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>chr(int(3))</arg>
+</arguments>
+<assign>
+<var>${CTRL_C}</var>
+</assign>
+<msg timestamp="20190527 22:00:59.161" level="INFO">${CTRL_C} = </msg>
+<status status="PASS" starttime="20190527 22:00:59.161" endtime="20190527 22:00:59.161"></status>
+</kw>
+<kw name="Set Timeout" library="Telnet">
+<doc>Sets the timeout used for waiting output in the current connection.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:00:59.162" endtime="20190527 22:00:59.162"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20190527 22:01:00.162" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190527 22:00:59.162" endtime="20190527 22:01:00.162"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>${CTRL_C}</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:00.162" endtime="20190527 22:01:00.163"></status>
+</kw>
+<kw name="Read Until" library="Telnet">
+<doc>Reads output until ``expected`` text is encountered.</doc>
+<arguments>
+<arg>Password:</arg>
+</arguments>
+<msg timestamp="20190527 22:01:00.164" level="INFO">User Access Verification
+
+Password:</msg>
+<status status="PASS" starttime="20190527 22:01:00.163" endtime="20190527 22:01:00.164"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>${AP_PWD}</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:00.164" endtime="20190527 22:01:00.200"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190527 22:01:00.398" level="INFO">Password:
+
+AP740-I-newFlash&gt;</msg>
+<status status="PASS" starttime="20190527 22:01:00.200" endtime="20190527 22:01:00.399"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>enable</arg>
+</arguments>
+<msg timestamp="20190527 22:01:00.598" level="INFO">enable</msg>
+<status status="PASS" starttime="20190527 22:01:00.399" endtime="20190527 22:01:00.598"></status>
+</kw>
+<kw name="Read Until" library="Telnet">
+<doc>Reads output until ``expected`` text is encountered.</doc>
+<arguments>
+<arg>Password:</arg>
+</arguments>
+<msg timestamp="20190527 22:01:00.599" level="INFO">Password:</msg>
+<status status="PASS" starttime="20190527 22:01:00.598" endtime="20190527 22:01:00.599"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>${AP_EN_PWD}</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:00.599" endtime="20190527 22:01:00.601"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190527 22:01:00.808" level="INFO">AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190527 22:01:00.601" endtime="20190527 22:01:00.808"></status>
+</kw>
+<status status="PASS" starttime="20190527 22:00:57.346" endtime="20190527 22:01:00.808"></status>
+</kw>
+<test id="s1-t1" name="Test spectral enable radio 1 是否实际生效">
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>show running-config | i spectral</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:00.814" level="INFO">show running-config | i spectral</msg>
+<msg timestamp="20190527 22:01:01.018" level="INFO">spectral
+ spectral enable radio 1
+AP740-I-newFlash#</msg>
+<msg timestamp="20190527 22:01:01.018" level="INFO">${output} = spectral
+ spectral enable radio 1
+AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190527 22:01:00.811" endtime="20190527 22:01:01.018"></status>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*spectral enable radio 1*</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:01.019" endtime="20190527 22:01:01.019"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>terminal monitor</arg>
+</arguments>
+<msg timestamp="20190527 22:01:01.023" level="INFO">terminal monitor</msg>
+<status status="PASS" starttime="20190527 22:01:01.020" endtime="20190527 22:01:01.023"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>debug syslog limit numbers 0 time 0</arg>
+</arguments>
+<msg timestamp="20190527 22:01:01.238" level="INFO">AP740-I-newFlash#debug syslog limit numbers 0 time 0</msg>
+<status status="PASS" starttime="20190527 22:01:01.024" endtime="20190527 22:01:01.238"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>y</arg>
+</arguments>
+<msg timestamp="20190527 22:01:01.439" level="INFO">WARNING: debug number and time will not limit, continue? (y/n) [no]: y</msg>
+<status status="PASS" starttime="20190527 22:01:01.239" endtime="20190527 22:01:01.439"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>debug syslog limit reset</arg>
+</arguments>
+<msg timestamp="20190527 22:01:01.646" level="INFO">AP740-I-newFlash#debug syslog limit reset</msg>
+<status status="PASS" starttime="20190527 22:01:01.441" endtime="20190527 22:01:01.646"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190527 22:01:01.648" level="INFO">AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190527 22:01:01.647" endtime="20190527 22:01:01.648"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>co</arg>
+</arguments>
+<msg timestamp="20190527 22:01:01.651" level="INFO">co</msg>
+<status status="PASS" starttime="20190527 22:01:01.648" endtime="20190527 22:01:01.651"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>spectral</arg>
+</arguments>
+<msg timestamp="20190527 22:01:01.694" level="INFO">Enter configuration commands, one per line.  End with CNTL/Z.</msg>
+<status status="PASS" starttime="20190527 22:01:01.652" endtime="20190527 22:01:01.695"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>spectral debug level 24</arg>
+</arguments>
+<msg timestamp="20190527 22:01:01.897" level="INFO">AP740-I-newFlash(config)#spectral</msg>
+<status status="PASS" starttime="20190527 22:01:01.697" endtime="20190527 22:01:01.897"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190527 22:01:01.898" level="INFO">AP740-I-newFlash(config-spectral)#spectral debug level 24
+AP740-I-newFlash(config-spectral)#</msg>
+<status status="PASS" starttime="20190527 22:01:01.898" endtime="20190527 22:01:01.898"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20190527 22:01:11.900" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20190527 22:01:01.899" endtime="20190527 22:01:11.900"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:11.902" endtime="20190527 22:01:11.903"></status>
+</kw>
+<kw name="Read" library="Telnet">
+<doc>Reads everything that is currently available in the output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:11.909" level="INFO">*May 27 22:03:02: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(2412) cnt(0) tstamp(-825838808, 203265160, 43) 
+*May 27 22:03:07: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(2432) cnt(0) tstamp(-820499552, 5339256, 5)</msg>
+<msg timestamp="20190527 22:01:11.909" level="INFO">${output} = *May 27 22:03:02: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(2412) cnt(0) tstamp(-825838808, 203265160, 43) 
+*May 27 22:03:07: %P2057-7-DEBUG: [classifiler][classifier_p...</msg>
+<status status="PASS" starttime="20190527 22:01:11.905" endtime="20190527 22:01:11.909"></status>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*freq(24*</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:11.911" endtime="20190527 22:01:11.912"></status>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*freq(5*</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:11.914" endtime="20190527 22:01:11.915"></status>
+</kw>
+<doc>测试配置是否生效.</doc>
+<status status="PASS" starttime="20190527 22:01:00.809" endtime="20190527 22:01:11.917" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Test spectral enable radio 2 是否实际生效">
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:11.929" endtime="20190527 22:01:11.929"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:11.929" endtime="20190527 22:01:11.930"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190527 22:01:12.146" level="INFO">WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190527 22:01:11.930" endtime="20190527 22:01:12.146"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 1</arg>
+</arguments>
+<msg timestamp="20190527 22:01:12.173" level="INFO">no spectral enable radio 1</msg>
+<status status="PASS" starttime="20190527 22:01:12.147" endtime="20190527 22:01:12.173"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>spectral enable radio 2</arg>
+</arguments>
+<msg timestamp="20190527 22:01:12.241" level="INFO">WS5308(config-ap)#spectral enable radio 2</msg>
+<status status="PASS" starttime="20190527 22:01:12.175" endtime="20190527 22:01:12.241"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190527 22:01:12.436" level="INFO">WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190527 22:01:12.243" endtime="20190527 22:01:12.436"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:12.437" endtime="20190527 22:01:12.437"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>show running-config | i spectral</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:12.656" level="INFO">AP740-I-newFlash(config-spectral)#show running-config | i spectral</msg>
+<msg timestamp="20190527 22:01:12.657" level="INFO">spectral
+ spectral enable radio 2
+AP740-I-newFlash(config-spectral)#</msg>
+<msg timestamp="20190527 22:01:12.657" level="INFO">${output} = spectral
+ spectral enable radio 2
+AP740-I-newFlash(config-spectral)#</msg>
+<status status="PASS" starttime="20190527 22:01:12.437" endtime="20190527 22:01:12.657"></status>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*spectral enable radio 2*</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:12.657" endtime="20190527 22:01:12.658"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:12.659" endtime="20190527 22:01:12.659"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190527 22:01:12.857" level="INFO">AP740-I-newFlash(config-spectral)#</msg>
+<status status="PASS" starttime="20190527 22:01:12.660" endtime="20190527 22:01:12.857"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20190527 22:01:22.858" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20190527 22:01:12.858" endtime="20190527 22:01:22.858"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:22.860" endtime="20190527 22:01:22.861"></status>
+</kw>
+<kw name="Read" library="Telnet">
+<doc>Reads everything that is currently available in the output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:22.870" level="INFO">*May 27 22:03:15: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(5180) cnt(0) tstamp(-806598600, 13900952, 7) 
+*May 27 22:03:17: %NFPP_ARP_GUARD-4-DOS_DETECTED: Host&lt;IP=172.30.103.1,MAC=N/A,port=Gi0/1,VLAN=1&gt; was detected.(2019-5-27 22:2:48)
+*May 27 22:03:21: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(5200) cnt(0) tstamp(-801317265, 5281335, 5)</msg>
+<msg timestamp="20190527 22:01:22.871" level="INFO">${output} = *May 27 22:03:15: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(5180) cnt(0) tstamp(-806598600, 13900952, 7) 
+*May 27 22:03:17: %NFPP_ARP_GUARD-4-DOS_DETECTED: Host&lt;IP=172....</msg>
+<status status="PASS" starttime="20190527 22:01:22.865" endtime="20190527 22:01:22.871"></status>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*freq(5*</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:22.873" endtime="20190527 22:01:22.875"></status>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*freq(24*</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:22.877" endtime="20190527 22:01:22.877"></status>
+</kw>
+<status status="PASS" starttime="20190527 22:01:11.925" endtime="20190527 22:01:22.878" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Test spectral enable radio 3 是否实际生效">
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:22.882" endtime="20190527 22:01:22.882"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:22.883" endtime="20190527 22:01:22.883"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190527 22:01:23.093" level="INFO">WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190527 22:01:22.884" endtime="20190527 22:01:23.093"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 2</arg>
+</arguments>
+<msg timestamp="20190527 22:01:23.112" level="INFO">no spectral enable radio 2</msg>
+<status status="PASS" starttime="20190527 22:01:23.093" endtime="20190527 22:01:23.112"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>spectral enable radio 3</arg>
+</arguments>
+<msg timestamp="20190527 22:01:23.166" level="INFO">WS5308(config-ap)#spectral enable radio 3</msg>
+<status status="PASS" starttime="20190527 22:01:23.113" endtime="20190527 22:01:23.167"></status>
+</kw>
+<kw name="Read" library="Telnet">
+<doc>Reads everything that is currently available in the output.</doc>
+<status status="PASS" starttime="20190527 22:01:23.169" endtime="20190527 22:01:23.169"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:23.171" endtime="20190527 22:01:23.171"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:23.173" endtime="20190527 22:01:23.173"></status>
+</kw>
+<kw name="Read" library="Telnet">
+<doc>Reads everything that is currently available in the output.</doc>
+<msg timestamp="20190527 22:01:23.175" level="INFO">AP740-I-newFlash(config-spectral)#</msg>
+<status status="PASS" starttime="20190527 22:01:23.174" endtime="20190527 22:01:23.175"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>show running-config | i spectral</arg>
+</arguments>
+<msg timestamp="20190527 22:01:23.384" level="INFO">AP740-I-newFlash(config-spectral)#show running-config | i spectral</msg>
+<status status="PASS" starttime="20190527 22:01:23.176" endtime="20190527 22:01:23.384"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>20s</arg>
+</arguments>
+<msg timestamp="20190527 22:01:43.386" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" starttime="20190527 22:01:23.385" endtime="20190527 22:01:43.387"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:43.388" endtime="20190527 22:01:43.389"></status>
+</kw>
+<kw name="Read" library="Telnet">
+<doc>Reads everything that is currently available in the output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:43.396" level="INFO">spectral
+ spectral enable radio 3
+AP740-I-newFlash(config-spectral)#*May 27 22:03:26: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(5180) cnt(0) tstamp(-961443248, -160125983, 5) 
+*May 27 22:03:32: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(5200) cnt(0) tstamp(-956156582, 5286666, 5) 
+*May 27 22:03:32: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(5180) cnt(0) tstamp(-956040053, 116529, 0) 
+*May 27 22:03:37: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(5220) cnt(0) tstamp(-950874905, 5165148, 5) 
+*May 27 22:03:37: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(5180) cnt(0) tstamp(-950757742, 117163, 0)</msg>
+<msg timestamp="20190527 22:01:43.396" level="INFO">${output} = spectral
+ spectral enable radio 3
+AP740-I-newFlash(config-spectral)#*May 27 22:03:26: %P2057-7-DEBUG: [classifiler][classifier_process_spectral_msg][1469]freq(5180) cnt(0) tstamp(-961443248, -1601...</msg>
+<status status="PASS" starttime="20190527 22:01:43.390" endtime="20190527 22:01:43.396"></status>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*spectral enable radio 3*</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:43.397" endtime="20190527 22:01:43.398"></status>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*freq(5*</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:43.398" endtime="20190527 22:01:43.399"></status>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*freq(24*</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:43.401" endtime="20190527 22:01:43.401"></status>
+</kw>
+<status status="PASS" starttime="20190527 22:01:22.880" endtime="20190527 22:01:43.402" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Test spectral enable radio x 结束">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>test end</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:43.404" endtime="20190527 22:01:43.405"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:43.406" endtime="20190527 22:01:43.406"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:43.406" endtime="20190527 22:01:43.407"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190527 22:01:43.407" level="INFO">WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190527 22:01:43.407" endtime="20190527 22:01:43.407"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 3</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:43.408" endtime="20190527 22:01:43.426"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>show ap-config running ${AP_NAME}</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:43.476" level="INFO">WS5308(config-ap)#no spectral enable radio 3</msg>
+<msg timestamp="20190527 22:01:44.081" level="INFO">WS5308(config-ap)#show ap-config running AP740-I-newFlash
+
+Building configuration...
+Current configuration: 83 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+ wlan-cap enable 1
+!
+end
+WS5308(config-ap)#</msg>
+<msg timestamp="20190527 22:01:44.081" level="INFO">${output} = WS5308(config-ap)#show ap-config running AP740-I-newFlash
+
+Building configuration...
+Current configuration: 83 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+ wlan-cap enab...</msg>
+<status status="PASS" starttime="20190527 22:01:43.426" endtime="20190527 22:01:44.081"></status>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*spectral enable radio*</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:44.083" endtime="20190527 22:01:44.084"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:44.086" endtime="20190527 22:01:44.087"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:44.087" endtime="20190527 22:01:44.087"></status>
+</kw>
+<kw name="Read" library="Telnet">
+<doc>Reads everything that is currently available in the output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:44.091" level="INFO">AP740-I-newFlash(config-spectral)#</msg>
+<msg timestamp="20190527 22:01:44.091" level="INFO">${output} = AP740-I-newFlash(config-spectral)#
+</msg>
+<status status="PASS" starttime="20190527 22:01:44.090" endtime="20190527 22:01:44.091"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>end</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:44.299" level="INFO">AP740-I-newFlash(config-spectral)#end</msg>
+<msg timestamp="20190527 22:01:44.300" level="INFO">*May 27 22:03:42: %SYS-5-CONFIG_I: Configured from console by vty0(172.30.103.117)
+AP740-I-newFlash#</msg>
+<msg timestamp="20190527 22:01:44.300" level="INFO">${output} = *May 27 22:03:42: %SYS-5-CONFIG_I: Configured from console by vty0(172.30.103.117)
+AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190527 22:01:44.092" endtime="20190527 22:01:44.300"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>configure</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:44.499" level="INFO">configure</msg>
+<msg timestamp="20190527 22:01:44.500" level="INFO">Enter configuration commands, one per line.  End with CNTL/Z.
+AP740-I-newFlash(config)#</msg>
+<msg timestamp="20190527 22:01:44.500" level="INFO">${output} = Enter configuration commands, one per line.  End with CNTL/Z.
+AP740-I-newFlash(config)#</msg>
+<status status="PASS" starttime="20190527 22:01:44.300" endtime="20190527 22:01:44.500"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>spectral</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:44.505" level="INFO">spectral</msg>
+<msg timestamp="20190527 22:01:44.710" level="INFO">AP740-I-newFlash(config-spectral)#</msg>
+<msg timestamp="20190527 22:01:44.710" level="INFO">${output} = AP740-I-newFlash(config-spectral)#</msg>
+<status status="PASS" starttime="20190527 22:01:44.501" endtime="20190527 22:01:44.710"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>no spectral debug level</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:44.910" level="INFO">no spectral debug level</msg>
+<msg timestamp="20190527 22:01:44.910" level="INFO">AP740-I-newFlash(config-spectral)#</msg>
+<msg timestamp="20190527 22:01:44.911" level="INFO">${output} = AP740-I-newFlash(config-spectral)#</msg>
+<status status="PASS" starttime="20190527 22:01:44.711" endtime="20190527 22:01:44.911"></status>
+</kw>
+<kw name="Read" library="Telnet">
+<doc>Reads everything that is currently available in the output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:44.913" level="INFO">${output} = </msg>
+<status status="PASS" starttime="20190527 22:01:44.912" endtime="20190527 22:01:44.914"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>show running-config | i spectral</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190527 22:01:45.115" level="INFO">show running-config | i spectral</msg>
+<msg timestamp="20190527 22:01:45.116" level="INFO">spectral
+AP740-I-newFlash(config-spectral)#</msg>
+<msg timestamp="20190527 22:01:45.116" level="INFO">${output} = spectral
+AP740-I-newFlash(config-spectral)#</msg>
+<status status="PASS" starttime="20190527 22:01:44.915" endtime="20190527 22:01:45.116"></status>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*spectral debug*</arg>
+</arguments>
+<status status="PASS" starttime="20190527 22:01:45.117" endtime="20190527 22:01:45.118"></status>
+</kw>
+<status status="PASS" starttime="20190527 22:01:43.404" endtime="20190527 22:01:45.118" critical="yes"></status>
+</test>
+<kw name="Close All Connections" library="Telnet" type="teardown">
+<doc>Closes all open connections and empties the connection cache.</doc>
+<status status="PASS" starttime="20190527 22:01:45.120" endtime="20190527 22:01:45.121"></status>
+</kw>
+<doc>使用telnet库 进行spectral enable radio测试的案例，测试需要先配置AC、AP的IP、端口、名字、具体内容看Variables字段</doc>
+<status status="PASS" starttime="20190527 22:00:57.284" endtime="20190527 22:01:45.121"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" id="s1" name="Spectral Debug Level 24">Spectral Debug Level 24</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

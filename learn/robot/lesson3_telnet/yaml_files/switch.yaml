@@ -1,0 +1,11 @@
+SW_TABLE:
+# 第一套环境
+  SW1:
+    host: 172.29.55.5
+    port: 2001
+    name: SW1
+# 第二套环境
+  SW2:
+    host: 172.29.55.21
+    port: 2002
+    name: SW1

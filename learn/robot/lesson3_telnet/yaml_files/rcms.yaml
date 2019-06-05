@@ -1,0 +1,11 @@
+RCMS_TABLE:
+#  第一套环境
+  RCMS1:
+    name: RCMS
+    host: 172.29.55.5
+    port: 23
+#  第二套环境
+  RCMS2:
+    name: RCMS
+    host: 172.29.55.21
+    port: 23

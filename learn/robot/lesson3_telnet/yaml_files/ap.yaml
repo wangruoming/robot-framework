@@ -1,0 +1,94 @@
+AP_TABLE:
+# 第一套
+  AP1:
+    name: AP1
+    projectid: ap550  
+    product: AP740-I(C)
+    mac: 5869.6c84.b21e    
+    host: 172.29.55.5
+    port: 2006
+    password: ruijie
+    enablepassword: apdebug
+  AP2:
+    name: AP850_RF
+    projectid: ap850-i 
+    product: AP850-I
+    mac: 0015.1234.9864    
+    host: 172.29.55.5
+    port: 2007
+    password: ruijie
+    enablepassword: apdebug
+  AP3:
+    name: AP2
+    projectid: ap720  
+    product: AP720-I
+    mac: 5869.6ce9.06f4    
+    host: 172.29.55.5
+    port: 2008
+    password: ruijie
+    enablepassword: apdebug
+  AP4:
+    name: AP2
+    projectid: ap680-i 
+    product: AP680-I
+    mac: aabb.ccdd.ef48
+    host: 172.29.55.5
+    port: 2009
+    password: ruijie
+    enablepassword: apdebug
+  AP5:
+    name: AP840_RF
+    projectid: ap840-i 
+    product: AP840-I
+    mac: 1234.5678.9acd    
+    host: 172.29.55.5
+    port: 2010
+    password: ruijie
+    enablepassword: apdebug
+  AP6:
+    name: AP2
+    projectid: ap630-cd 
+    product: AP630-CD
+    mac: 5869.6c20.2190   
+    host:  172.29.55.5
+    port: 2012
+    password: admin
+    enablepassword: apdebug
+  AP7:
+    name: AP1
+    projectid: ap880-i 
+    product: AP880-I
+    mac: 0224.5664.6516    
+    host: 172.29.55.5
+    port: 2013
+    password: ruijie
+    enablepassword: apdebug
+  AP8:
+    name: AP1
+    projectid: am5528 
+    product: AM5528
+    mac: 00d0.f822.33e1    
+    host: 172.29.55.6
+    port: 2003
+    password: ruijie
+    enablepassword: apdebug
+    
+# 第二套
+  AP9:
+    name: AP1
+    projectid: ap730-tr 
+    product: AP730(TR)
+    mac: 8005.880b.452c    
+    host: 172.29.55.21
+    port: 2006
+    password: ruijie
+    enablepassword: apdebug
+  AP10:
+    name: AP1
+    projectid: ap730-tr
+    product: AP730-L
+    mac: 8005.8809.2627   
+    host: 172.29.55.21
+    port: 2008
+    password: ruijie
+    enablepassword: apdebug

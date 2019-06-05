@@ -1,0 +1,17 @@
+IMAGE_SERVER_TABLE:
+# 第一套
+  ImageServer1:
+    host: 172.29.55.4
+    name: ImageServer  
+    username: ruijie  # SSH Name
+    password: 111     # SSH Password.
+    rootpassword: ruijie
+    dir: /home/ruijie/tftpboot
+# 第二套
+  ImageServer2:
+    host: 172.29.55.51
+    name: ImageServer  
+    username: rjwx       # SSH Name
+    password: rjwx001    # SSH Password.
+    rootpassword: rjwx001
+    dir: /home/rjwx/tftpboot

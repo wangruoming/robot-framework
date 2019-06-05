@@ -1,0 +1,29 @@
+STA_TABLE:
+    STA1:
+        host: 172.29.55.50
+        name: STA1
+        username: rjwx
+        password: rjwx001
+        rootpassword: rjwx001
+        wifidev: wlp1s0
+    STA2:
+        host: 172.29.55.51
+        name: STA1
+        username: rjwx
+        password: rjwx001
+        rootpassword: rjwx001
+        wifidev: wlp1s0
+    STA3:
+        host: 172.29.55.52
+        name: STA1
+        username: rjwx
+        password: rjwx001
+        rootpassword: rjwx001
+        wifidev: wlp1s0
+    STA4:
+        host: 172.29.55.53
+        name: STA1
+        username: rjwx
+        password: rjwx001
+        rootpassword: rjwx001
+        wifidev: wlp1s0

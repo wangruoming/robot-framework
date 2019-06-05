@@ -1,0 +1,60 @@
+AC_TABLE:
+# 第一套
+  AC1:
+    name: AC1
+    projectid: ws5308
+    product: WS6108    
+    host: 172.29.55.5
+    port: 2002
+  AC2:
+    name: AC2
+    projectid: ws5708  
+    product: WS5708    
+    host: 172.29.55.5
+    port: 2003
+  AC3: # 注意：在插入WS卡的情况下，6024失去AC能力
+    name: AC3
+    projectid: s29xs-p-ws
+    product: WS6024   
+    host: 172.29.55.5
+    port: 2011
+  AC4:
+    name: AC4
+    projectid: m2900-ws
+    product: M6000-WS
+    host: 172.29.55.5
+    port: 2015
+  AC7: # 插在一台 WS7612-S 上
+    name: AC7
+    projectid: m7000-ws
+    product: M7000-WS
+    host: 172.29.55.6
+    port: 2005
+  AC8:
+    name: AC8
+    projectid: ws5848
+    product: WS6812
+    host: 172.29.55.6
+    port: 2004
+# 第二套
+  AC5:
+    name: AC5
+    projectid: ws6512
+    product: WS6512
+    ctrlip: 10.10.101.2
+    host: 172.29.55.21
+    port: 2009
+  AC6:
+    name: AC6
+    projectid: ws7200
+    product: WS7024
+    ctrlip: 10.10.101.3
+    host: 172.29.55.21
+    port: 2010
+  AC9:
+    name: AC9
+    projectid: ws7800
+    product: WS7880
+    ctrlip: 10.10.101.4
+    host: 172.29.55.21
+    port: 2013

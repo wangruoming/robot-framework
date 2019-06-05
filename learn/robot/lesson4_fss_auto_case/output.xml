@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.2 on win32)" generated="20190515 14:44:29.896" rpa="false">
+<suite id="s1" name="Fss Auto Test" source="E:\learn\robot\lesson4_fss_auto_case\fss_auto_test.robot">
+<test id="s1-t1" name="fss_auto_test：(no) spectral enable radio 1/2/3 and (no) spectral enable">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>172.30.103.194</arg>
+</arguments>
+<assign>
+<var>${AC_IP}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.037" level="INFO">${AC_IP} = 172.30.103.194</msg>
+<status status="PASS" starttime="20190515 14:44:32.037" endtime="20190515 14:44:32.037"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>23</arg>
+</arguments>
+<assign>
+<var>${AC_PORT}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.040" level="INFO">${AC_PORT} = 23</msg>
+<status status="PASS" starttime="20190515 14:44:32.040" endtime="20190515 14:44:32.041"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable radio 1</arg>
+</arguments>
+<assign>
+<var>${AC_TEST_CMD1}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.045" level="INFO">${AC_TEST_CMD1} = spectral enable radio 1</msg>
+<status status="PASS" starttime="20190515 14:44:32.045" endtime="20190515 14:44:32.045"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable radio 2</arg>
+</arguments>
+<assign>
+<var>${AC_TEST_CMD2}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.048" level="INFO">${AC_TEST_CMD2} = spectral enable radio 2</msg>
+<status status="PASS" starttime="20190515 14:44:32.048" endtime="20190515 14:44:32.048"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable radio 3</arg>
+</arguments>
+<assign>
+<var>${AC_TEST_CMD3}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.051" level="INFO">${AC_TEST_CMD3} = spectral enable radio 3</msg>
+<status status="PASS" starttime="20190515 14:44:32.050" endtime="20190515 14:44:32.051"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable</arg>
+</arguments>
+<assign>
+<var>${AC_TEST_CMD4}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.056" level="INFO">${AC_TEST_CMD4} = spectral enable</msg>
+<status status="PASS" starttime="20190515 14:44:32.055" endtime="20190515 14:44:32.056"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable radio 1</arg>
+</arguments>
+<assign>
+<var>${AC_CHECK_RET1}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.060" level="INFO">${AC_CHECK_RET1} = spectral enable radio 1</msg>
+<status status="PASS" starttime="20190515 14:44:32.059" endtime="20190515 14:44:32.060"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable radio 2</arg>
+</arguments>
+<assign>
+<var>${AC_CHECK_RET2}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.064" level="INFO">${AC_CHECK_RET2} = spectral enable radio 2</msg>
+<status status="PASS" starttime="20190515 14:44:32.064" endtime="20190515 14:44:32.064"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable radio 3</arg>
+</arguments>
+<assign>
+<var>${AC_CHECK_RET3}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.066" level="INFO">${AC_CHECK_RET3} = spectral enable radio 3</msg>
+<status status="PASS" starttime="20190515 14:44:32.066" endtime="20190515 14:44:32.066"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable</arg>
+</arguments>
+<assign>
+<var>${AC_CHECK_RET4}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.071" level="INFO">${AC_CHECK_RET4} = spectral enable</msg>
+<status status="PASS" starttime="20190515 14:44:32.070" endtime="20190515 14:44:32.071"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>*00d0.f822.334c*</arg>
+</arguments>
+<assign>
+<var>${AC_CHECK_TMP}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.074" level="INFO">${AC_CHECK_TMP} = *00d0.f822.334c*</msg>
+<status status="PASS" starttime="20190515 14:44:32.074" endtime="20190515 14:44:32.074"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>172.30.103.49</arg>
+</arguments>
+<assign>
+<var>${AP_IP}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.079" level="INFO">${AP_IP} = 172.30.103.49</msg>
+<status status="PASS" starttime="20190515 14:44:32.079" endtime="20190515 14:44:32.079"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>23</arg>
+</arguments>
+<assign>
+<var>${AP_PORT}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.082" level="INFO">${AP_PORT} = 23</msg>
+<status status="PASS" starttime="20190515 14:44:32.082" endtime="20190515 14:44:32.082"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>00d0.f822.334c</arg>
+</arguments>
+<assign>
+<var>${AP_MAC}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.084" level="INFO">${AP_MAC} = 00d0.f822.334c</msg>
+<status status="PASS" starttime="20190515 14:44:32.084" endtime="20190515 14:44:32.084"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>AP740-I-newFlash</arg>
+</arguments>
+<assign>
+<var>${AP_NAME}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.086" level="INFO">${AP_NAME} = AP740-I-newFlash</msg>
+<status status="PASS" starttime="20190515 14:44:32.086" endtime="20190515 14:44:32.086"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>show running-config | i spectral</arg>
+</arguments>
+<assign>
+<var>${AP_CHECK_CMD}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.089" level="INFO">${AP_CHECK_CMD} = show running-config | i spectral</msg>
+<status status="PASS" starttime="20190515 14:44:32.089" endtime="20190515 14:44:32.089"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable radio 1</arg>
+</arguments>
+<assign>
+<var>${AP_CHECK_RET1}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.093" level="INFO">${AP_CHECK_RET1} = spectral enable radio 1</msg>
+<status status="PASS" starttime="20190515 14:44:32.092" endtime="20190515 14:44:32.093"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable radio 2</arg>
+</arguments>
+<assign>
+<var>${AP_CHECK_RET2}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.096" level="INFO">${AP_CHECK_RET2} = spectral enable radio 2</msg>
+<status status="PASS" starttime="20190515 14:44:32.096" endtime="20190515 14:44:32.096"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable radio 3</arg>
+</arguments>
+<assign>
+<var>${AP_CHECK_RET3}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.100" level="INFO">${AP_CHECK_RET3} = spectral enable radio 3</msg>
+<status status="PASS" starttime="20190515 14:44:32.100" endtime="20190515 14:44:32.100"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>spectral enable</arg>
+</arguments>
+<assign>
+<var>${AP_CHECK_RET4}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.103" level="INFO">${AP_CHECK_RET4} = spectral enable</msg>
+<status status="PASS" starttime="20190515 14:44:32.103" endtime="20190515 14:44:32.103"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>ruijie</arg>
+</arguments>
+<assign>
+<var>${Password}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.109" level="INFO">${Password} = ruijie</msg>
+<status status="PASS" starttime="20190515 14:44:32.109" endtime="20190515 14:44:32.109"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>en</arg>
+</arguments>
+<assign>
+<var>${Password_op}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.115" level="INFO">${Password_op} = en</msg>
+<status status="PASS" starttime="20190515 14:44:32.115" endtime="20190515 14:44:32.115"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>apdebug</arg>
+</arguments>
+<assign>
+<var>${Password1}</var>
+</assign>
+<msg timestamp="20190515 14:44:32.121" level="INFO">${Password1} = apdebug</msg>
+<status status="PASS" starttime="20190515 14:44:32.120" endtime="20190515 14:44:32.121"></status>
+</kw>
+<kw name="Open Connection" library="Telnet">
+<doc>Opens a new Telnet connection to the given host and port.</doc>
+<arguments>
+<arg>host=${AC_IP}</arg>
+<arg>port=${AC_PORT}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:32.127" level="INFO">Opening connection to 172.30.103.194:23 with prompt: (&gt;|#|:)$ (regexp)</msg>
+<status status="PASS" starttime="20190515 14:44:32.126" endtime="20190515 14:44:32.132"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:32.638" level="INFO">WS5308#</msg>
+<status status="PASS" starttime="20190515 14:44:32.135" endtime="20190515 14:44:32.638"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>co</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:32.642" endtime="20190515 14:44:32.643"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:32.643" endtime="20190515 14:44:32.643"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:33.098" level="INFO">co
+Enter configuration commands, one per line.  End with CNTL/Z.
+WS5308(config)#</msg>
+<status status="PASS" starttime="20190515 14:44:32.644" endtime="20190515 14:44:33.098"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>ap-config ${AP_MAC}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:33.100" endtime="20190515 14:44:33.101"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:33.103" endtime="20190515 14:44:33.103"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s ap</arg>
+</arguments>
+<msg timestamp="20190515 14:44:33.339" level="INFO">ap-config 00d0.f822.334c
+You are going to config AP(AP740-I-newFlash), which is online now.
+WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190515 14:44:33.105" endtime="20190515 14:44:33.340"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no ${AC_TEST_CMD1}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:33.368" level="INFO">no spectral enable radio 1</msg>
+<status status="PASS" starttime="20190515 14:44:33.351" endtime="20190515 14:44:33.368"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no ${AC_TEST_CMD2}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:33.447" level="INFO">WS5308(config-ap)#no spectral enable radio 2</msg>
+<status status="PASS" starttime="20190515 14:44:33.370" endtime="20190515 14:44:33.447"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no ${AC_TEST_CMD3}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:33.516" level="INFO">WS5308(config-ap)#no spectral enable radio 3</msg>
+<status status="PASS" starttime="20190515 14:44:33.452" endtime="20190515 14:44:33.517"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no ${AC_TEST_CMD4}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:33.587" level="INFO">WS5308(config-ap)#no spectral enable</msg>
+<status status="PASS" starttime="20190515 14:44:33.519" endtime="20190515 14:44:33.587"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:34.590" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190515 14:44:33.590" endtime="20190515 14:44:34.590"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>${AC_TEST_CMD1}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:34.605" endtime="20190515 14:44:34.606"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:34.614" endtime="20190515 14:44:34.615"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>${AC_TEST_CMD2}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:34.619" level="INFO">WS5308(config-ap)#spectral enable radio 1</msg>
+<status status="PASS" starttime="20190515 14:44:34.617" endtime="20190515 14:44:34.619"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>${AC_TEST_CMD3}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:34.698" level="INFO">WS5308(config-ap)#spectral enable radio 2</msg>
+<status status="PASS" starttime="20190515 14:44:34.621" endtime="20190515 14:44:34.698"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s spectral</arg>
+</arguments>
+<msg timestamp="20190515 14:44:34.899" level="INFO">WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190515 14:44:34.700" endtime="20190515 14:44:34.899"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>show ap-config running ${AP_NAME}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:34.907" level="INFO">spectral enable radio 3</msg>
+<status status="PASS" starttime="20190515 14:44:34.907" endtime="20190515 14:44:34.907"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+<arg>${AC_CHECK_RET1}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:34.910" level="INFO">WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190515 14:44:34.910" endtime="20190515 14:44:34.910"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+<arg>${AC_CHECK_RET2}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:35.427" level="INFO">show ap-config running AP740-I-newFlash
+
+Building configuration...
+Current configuration: 141 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+ spectral enable radio 1
+ spectral enable radio 2</msg>
+<status status="PASS" starttime="20190515 14:44:34.915" endtime="20190515 14:44:35.427"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+<arg>${AC_CHECK_RET3}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:35.436" level="INFO">spectral enable radio 3</msg>
+<status status="PASS" starttime="20190515 14:44:35.435" endtime="20190515 14:44:35.436"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:36.446" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190515 14:44:35.446" endtime="20190515 14:44:36.446"></status>
+</kw>
+<kw name="Open Connection" library="Telnet">
+<doc>Opens a new Telnet connection to the given host and port.</doc>
+<arguments>
+<arg>host=${AP_IP}</arg>
+<arg>port=${AP_PORT}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:36.448" level="INFO">Opening connection to 172.30.103.49:23 with prompt: (&gt;|#|:)$ (regexp)</msg>
+<status status="PASS" starttime="20190515 14:44:36.447" endtime="20190515 14:44:36.449"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Password}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:36.452" endtime="20190515 14:44:36.453"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+<arg>Username:</arg>
+<arg>Password:</arg>
+</arguments>
+<msg timestamp="20190515 14:44:36.669" level="INFO">User Access Verification
+
+Password:</msg>
+<status status="PASS" starttime="20190515 14:44:36.456" endtime="20190515 14:44:36.669"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>${Password}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:36.672" endtime="20190515 14:44:36.672"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:36.675" endtime="20190515 14:44:36.675"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:36.909" level="INFO">AP740-I-newFlash&gt;</msg>
+<status status="PASS" starttime="20190515 14:44:36.677" endtime="20190515 14:44:36.909"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Password_op}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:36.912" endtime="20190515 14:44:36.913"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>${Password_op}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:36.915" endtime="20190515 14:44:36.915"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:36.917" endtime="20190515 14:44:36.917"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Password1}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:36.919" endtime="20190515 14:44:36.919"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>${Password1}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:36.921" endtime="20190515 14:44:36.922"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:36.928" endtime="20190515 14:44:36.929"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:37.138" level="INFO">en
+
+Password:
+AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190515 14:44:36.932" endtime="20190515 14:44:37.139"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>${AP_CHECK_CMD}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:37.338" level="INFO">show running-config | i spectral</msg>
+<status status="PASS" starttime="20190515 14:44:37.141" endtime="20190515 14:44:37.339"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+<arg>${AP_CHECK_RET1}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:37.354" level="INFO">spectral
+ spectral enable radio 1</msg>
+<status status="PASS" starttime="20190515 14:44:37.353" endtime="20190515 14:44:37.355"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+<arg>${AP_CHECK_RET2}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:37.371" level="INFO">spectral enable radio 2</msg>
+<status status="PASS" starttime="20190515 14:44:37.369" endtime="20190515 14:44:37.371"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+<arg>${AP_CHECK_RET3}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:37.376" level="INFO">spectral enable radio 3
+AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190515 14:44:37.376" endtime="20190515 14:44:37.376"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:38.380" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190515 14:44:37.380" endtime="20190515 14:44:38.380"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:38.391" endtime="20190515 14:44:38.391"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:38.421" level="INFO">!
+end
+WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190515 14:44:38.421" endtime="20190515 14:44:38.421"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no ${AC_TEST_CMD1}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:38.447" level="INFO">no spectral enable radio 1</msg>
+<status status="PASS" starttime="20190515 14:44:38.425" endtime="20190515 14:44:38.447"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no ${AC_TEST_CMD2}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:38.520" level="INFO">WS5308(config-ap)#no spectral enable radio 2</msg>
+<status status="PASS" starttime="20190515 14:44:38.448" endtime="20190515 14:44:38.521"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no ${AC_TEST_CMD3}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:38.776" level="INFO">WS5308(config-ap)#no spectral enable radio 3</msg>
+<status status="PASS" starttime="20190515 14:44:38.534" endtime="20190515 14:44:38.776"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>show ap-config running ${AP_NAME}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:38.805" level="INFO">WS5308(config-ap)#show ap-config running AP740-I-newFlash</msg>
+<status status="PASS" starttime="20190515 14:44:38.784" endtime="20190515 14:44:38.805"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190515 14:44:39.296" level="INFO">Building configuration...
+Current configuration: 63 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+!
+end
+WS5308(config-ap)#</msg>
+<msg timestamp="20190515 14:44:39.297" level="INFO">${output} = 
+Building configuration...
+Current configuration: 63 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+!
+end
+WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190515 14:44:38.808" endtime="20190515 14:44:39.297"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:39.299" endtime="20190515 14:44:39.301"></status>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*spectral enable*</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:39.303" endtime="20190515 14:44:39.303"></status>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>${AC_CHECK_TMP}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:39.306" endtime="20190515 14:44:39.306"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:39.307" endtime="20190515 14:44:39.307"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:39.311" endtime="20190515 14:44:39.312"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:39.506" level="INFO">AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190515 14:44:39.317" endtime="20190515 14:44:39.506"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>${AP_CHECK_CMD}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:39.706" level="INFO">show running-config | i spectral</msg>
+<status status="PASS" starttime="20190515 14:44:39.510" endtime="20190515 14:44:39.706"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190515 14:44:39.710" level="INFO">spectral
+AP740-I-newFlash#</msg>
+<msg timestamp="20190515 14:44:39.710" level="INFO">${output} = spectral
+AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190515 14:44:39.710" endtime="20190515 14:44:39.710"></status>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*spectral enable*</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:39.713" endtime="20190515 14:44:39.713"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:39.716" endtime="20190515 14:44:39.716"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:39.720" endtime="20190515 14:44:39.721"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>${AC_TEST_CMD4}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:39.723" endtime="20190515 14:44:39.737"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>show ap-config running ${AP_NAME}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:39.786" level="INFO">WS5308(config-ap)#spectral enable</msg>
+<status status="PASS" starttime="20190515 14:44:39.741" endtime="20190515 14:44:39.786"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+<arg>${AC_CHECK_RET4}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:39.987" level="INFO">WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190515 14:44:39.789" endtime="20190515 14:44:39.987"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:39.989" endtime="20190515 14:44:39.989"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:39.993" endtime="20190515 14:44:39.993"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:40.198" level="INFO">AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190515 14:44:39.996" endtime="20190515 14:44:40.198"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>${AP_CHECK_CMD}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:40.397" level="INFO">show running-config | i spectral</msg>
+<status status="PASS" starttime="20190515 14:44:40.200" endtime="20190515 14:44:40.397"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+<arg>${AP_CHECK_RET4}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:40.408" level="INFO">spectral
+ spectral enable
+AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190515 14:44:40.407" endtime="20190515 14:44:40.408"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:40.411" endtime="20190515 14:44:40.411"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:40.414" endtime="20190515 14:44:40.414"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no ${AC_TEST_CMD4}</arg>
+</arguments>
+<msg timestamp="20190515 14:44:40.417" level="INFO">show ap-config running AP740-I-newFlash</msg>
+<status status="PASS" starttime="20190515 14:44:40.416" endtime="20190515 14:44:40.417"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:40.420" level="INFO">Building configuration...
+Current configuration: 81 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+ spectral enable
+!
+end
+WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190515 14:44:40.419" endtime="20190515 14:44:40.420"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20190515 14:44:41.422" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190515 14:44:40.422" endtime="20190515 14:44:41.422"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>show ap-config running ${AP_NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:41.431" endtime="20190515 14:44:41.432"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190515 14:44:41.440" level="INFO">WS5308(config-ap)#</msg>
+<msg timestamp="20190515 14:44:41.440" level="INFO">${output} = WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190515 14:44:41.440" endtime="20190515 14:44:41.440"></status>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*spectral enable*</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:41.451" endtime="20190515 14:44:41.451"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:41.454" endtime="20190515 14:44:41.455"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:41.457" endtime="20190515 14:44:41.457"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>${AP_CHECK_CMD}</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:41.468" endtime="20190515 14:44:41.469"></status>
+</kw>
+<kw name="Read Until Regexp" library="Telnet">
+<doc>Reads output until any of the ``expected`` regular expressions match.</doc>
+<arguments>
+<arg>(&gt;|#)</arg>
+<arg>\\sRETURN\\s</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190515 14:44:41.473" level="INFO">AP740-I-newFlash#</msg>
+<msg timestamp="20190515 14:44:41.473" level="INFO">${output} = AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190515 14:44:41.472" endtime="20190515 14:44:41.473"></status>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*spectral enable*</arg>
+</arguments>
+<status status="PASS" starttime="20190515 14:44:41.474" endtime="20190515 14:44:41.475"></status>
+</kw>
+<kw name="Close All Connections" library="Telnet" type="teardown">
+<doc>Closes all open connections and empties the connection cache.</doc>
+<status status="PASS" starttime="20190515 14:44:41.478" endtime="20190515 14:44:41.479"></status>
+</kw>
+<status status="PASS" starttime="20190515 14:44:32.034" endtime="20190515 14:44:41.482" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20190515 14:44:29.901" endtime="20190515 14:44:41.488"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Fss Auto Test">Fss Auto Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
