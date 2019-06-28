@@ -1,0 +1,1893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.2 on win32)" generated="20190627 16:22:46.138" rpa="false">
+<suite id="s1" name="Spectral Case1 01 2.4G" source="E:\learn\robot\FSS_TEST2\spectral_case1_01_2.4g\spectral_case1_01_2.4g.robot">
+<kw name="Open Connection And Login And Disconnet Capwap" type="setup">
+<kw name="Open Connection" library="Telnet">
+<doc>Opens a new Telnet connection to the given host and port.</doc>
+<arguments>
+<arg>${AC_IP}</arg>
+<arg>port=${AC_PORT}</arg>
+</arguments>
+<msg timestamp="20190627 16:22:46.650" level="INFO">Opening connection to 172.30.103.15:23 with prompt: (&gt;|#)$ (regexp)</msg>
+<status status="PASS" starttime="20190627 16:22:46.649" endtime="20190627 16:22:46.658"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>chr(int(3))</arg>
+</arguments>
+<assign>
+<var>${CTRL_C}</var>
+</assign>
+<msg timestamp="20190627 16:22:46.659" level="INFO">${CTRL_C} = </msg>
+<status status="PASS" starttime="20190627 16:22:46.658" endtime="20190627 16:22:46.659"></status>
+</kw>
+<kw name="Set Timeout" library="Telnet">
+<doc>Sets the timeout used for waiting output in the current connection.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:46.659" endtime="20190627 16:22:46.659"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20190627 16:22:47.659" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190627 16:22:46.659" endtime="20190627 16:22:47.659"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>${CTRL_C}</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:47.659" endtime="20190627 16:22:47.659"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190627 16:22:47.660" level="INFO">WS5308#</msg>
+<status status="PASS" starttime="20190627 16:22:47.659" endtime="20190627 16:22:47.661"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>co</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:47.661" endtime="20190627 16:22:47.678"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>ap-config ${AP_MAC}</arg>
+</arguments>
+<msg timestamp="20190627 16:22:47.703" level="INFO">WS5308#co</msg>
+<status status="PASS" starttime="20190627 16:22:47.678" endtime="20190627 16:22:47.703"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 1</arg>
+</arguments>
+<msg timestamp="20190627 16:22:47.933" level="INFO">Enter configuration commands, one per line.  End with CNTL/Z.</msg>
+<status status="PASS" starttime="20190627 16:22:47.704" endtime="20190627 16:22:47.933"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 2</arg>
+</arguments>
+<msg timestamp="20190627 16:22:47.963" level="INFO">WS5308(config)#ap-config 00d0.f822.334c</msg>
+<status status="PASS" starttime="20190627 16:22:47.933" endtime="20190627 16:22:47.963"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 3</arg>
+</arguments>
+<msg timestamp="20190627 16:22:48.023" level="INFO">You are going to config AP(AP740-I-newFlash), which is online now.</msg>
+<status status="PASS" starttime="20190627 16:22:47.963" endtime="20190627 16:22:48.023"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable</arg>
+</arguments>
+<msg timestamp="20190627 16:22:48.053" level="INFO">WS5308(config-ap)#no spectral enable radio 1</msg>
+<status status="PASS" starttime="20190627 16:22:48.024" endtime="20190627 16:22:48.053"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190627 16:22:48.450" level="INFO">WS5308(config-ap)#no spectral enable radio 2
+WS5308(config-ap)#no spectral enable radio 3
+WS5308(config-ap)#no spectral enable
+WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190627 16:22:48.054" endtime="20190627 16:22:48.450"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>show ap-config running ${AP_NAME}</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190627 16:22:48.464" level="INFO">show ap-config running AP740-I-newFlash</msg>
+<msg timestamp="20190627 16:22:48.974" level="INFO">Building configuration...
+Current configuration: 177 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+ wlan-cap enable 1
+ channel 157 radio 2
+ chan-width 40 radio 1
+ chan-width 40 radio 2
+ chan-width 40 radio 3
+!
+end
+WS5308(config-ap)#</msg>
+<msg timestamp="20190627 16:22:48.974" level="INFO">${output} = 
+Building configuration...
+Current configuration: 177 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+ wlan-cap enable 1
+ channel 157 radio 2
+ chan-width 40 radio 1
+ cha...</msg>
+<status status="PASS" starttime="20190627 16:22:48.450" endtime="20190627 16:22:48.974"></status>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*spectral enable*</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:48.974" endtime="20190627 16:22:48.975"></status>
+</kw>
+<kw name="Open Connection" library="Telnet">
+<doc>Opens a new Telnet connection to the given host and port.</doc>
+<arguments>
+<arg>${AP_IP}</arg>
+<arg>port=${AP_PORT}</arg>
+</arguments>
+<msg timestamp="20190627 16:22:48.975" level="INFO">Opening connection to 172.30.103.76:23 with prompt: (&gt;|#)$ (regexp)</msg>
+<status status="PASS" starttime="20190627 16:22:48.975" endtime="20190627 16:22:48.977"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>chr(int(3))</arg>
+</arguments>
+<assign>
+<var>${CTRL_C}</var>
+</assign>
+<msg timestamp="20190627 16:22:48.977" level="INFO">${CTRL_C} = </msg>
+<status status="PASS" starttime="20190627 16:22:48.977" endtime="20190627 16:22:48.977"></status>
+</kw>
+<kw name="Set Timeout" library="Telnet">
+<doc>Sets the timeout used for waiting output in the current connection.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:48.977" endtime="20190627 16:22:48.977"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20190627 16:22:49.978" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190627 16:22:48.977" endtime="20190627 16:22:49.978"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>${CTRL_C}</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:49.978" endtime="20190627 16:22:49.978"></status>
+</kw>
+<kw name="Read Until" library="Telnet">
+<doc>Reads output until ``expected`` text is encountered.</doc>
+<arguments>
+<arg>Password:</arg>
+</arguments>
+<msg timestamp="20190627 16:22:49.979" level="INFO">User Access Verification
+
+Password:</msg>
+<status status="PASS" starttime="20190627 16:22:49.978" endtime="20190627 16:22:49.979"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>${AP_PWD}</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:49.979" endtime="20190627 16:22:49.980"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190627 16:22:50.180" level="INFO">Password:
+
+AP740-I-newFlash&gt;</msg>
+<status status="PASS" starttime="20190627 16:22:49.980" endtime="20190627 16:22:50.180"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>enable</arg>
+</arguments>
+<msg timestamp="20190627 16:22:50.379" level="INFO">enable</msg>
+<status status="PASS" starttime="20190627 16:22:50.180" endtime="20190627 16:22:50.380"></status>
+</kw>
+<kw name="Read Until" library="Telnet">
+<doc>Reads output until ``expected`` text is encountered.</doc>
+<arguments>
+<arg>Password:</arg>
+</arguments>
+<msg timestamp="20190627 16:22:50.380" level="INFO">Password:</msg>
+<status status="PASS" starttime="20190627 16:22:50.380" endtime="20190627 16:22:50.380"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>${AP_EN_PWD}</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:50.380" endtime="20190627 16:22:50.580"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190627 16:22:50.580" level="INFO">AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190627 16:22:50.580" endtime="20190627 16:22:50.580"></status>
+</kw>
+<status status="PASS" starttime="20190627 16:22:46.649" endtime="20190627 16:22:50.581"></status>
+</kw>
+<test id="s1-t1" name="Test bandwidth config and fss config">
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:50.583" endtime="20190627 16:22:50.583"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:50.583" endtime="20190627 16:22:50.583"></status>
+</kw>
+<kw name="Read" library="Telnet">
+<doc>Reads everything that is currently available in the output.</doc>
+<status status="PASS" starttime="20190627 16:22:50.584" endtime="20190627 16:22:50.584"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>chan-width 40 radio 1</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:50.584" endtime="20190627 16:22:50.605"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>spectral enable radio 1</arg>
+</arguments>
+<msg timestamp="20190627 16:22:50.653" level="INFO">WS5308(config-ap)#chan-width 40 radio 1</msg>
+<status status="PASS" starttime="20190627 16:22:50.606" endtime="20190627 16:22:50.653"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>show ap-config running ${AP_NAME}</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190627 16:22:50.723" level="INFO">WS5308(config-ap)#spectral enable radio 1</msg>
+<msg timestamp="20190627 16:22:51.320" level="INFO">WS5308(config-ap)#show ap-config running AP740-I-newFlash
+
+Building configuration...
+Current configuration: 203 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+ wlan-cap enable 1
+ spectral enable radio 1
+ channel 157 radio 2
+ chan-width 40 radio 1
+ chan-width 40 radio 2
+ chan-width 40 radio 3
+!
+end
+WS5308(config-ap)#</msg>
+<msg timestamp="20190627 16:22:51.320" level="INFO">${output} = WS5308(config-ap)#show ap-config running AP740-I-newFlash
+
+Building configuration...
+Current configuration: 203 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+ wlan-cap ena...</msg>
+<status status="PASS" starttime="20190627 16:22:50.654" endtime="20190627 16:22:51.320"></status>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*${AC_TEST_CMD1}*</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:51.321" endtime="20190627 16:22:51.322"></status>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*chan-width 40 radio 1*</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:51.322" endtime="20190627 16:22:51.323"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20190627 16:22:52.324" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190627 16:22:51.324" endtime="20190627 16:22:52.324"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:52.325" endtime="20190627 16:22:52.325"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>show running-config | i spectral</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190627 16:22:52.330" level="INFO">show running-config | i spectral</msg>
+<msg timestamp="20190627 16:22:52.537" level="INFO">spectral
+ spectral enable radio 1
+ spectral stability bth 1
+ spectral stability mwo 1
+AP740-I-newFlash#</msg>
+<msg timestamp="20190627 16:22:52.537" level="INFO">${output} = spectral
+ spectral enable radio 1
+ spectral stability bth 1
+ spectral stability mwo 1
+AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190627 16:22:52.326" endtime="20190627 16:22:52.537"></status>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*${AC_TEST_CMD1}*</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:52.538" endtime="20190627 16:22:52.538"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>show dot11 wireless 1/0 | i Channel width</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190627 16:22:52.543" level="INFO">show dot11 wireless 1/0 | i Channel width</msg>
+<msg timestamp="20190627 16:22:52.747" level="INFO">Channel width................ 40Mhz
+AP740-I-newFlash#</msg>
+<msg timestamp="20190627 16:22:52.747" level="INFO">${output} =     Channel width................ 40Mhz
+AP740-I-newFlash#</msg>
+<status status="PASS" starttime="20190627 16:22:52.539" endtime="20190627 16:22:52.747"></status>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*40Mhz*</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:52.748" endtime="20190627 16:22:52.749"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>terminal monitor</arg>
+</arguments>
+<msg timestamp="20190627 16:22:52.753" level="INFO">terminal monitor</msg>
+<status status="PASS" starttime="20190627 16:22:52.750" endtime="20190627 16:22:52.753"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>debug syslog limit numbers 0 time 0</arg>
+</arguments>
+<msg timestamp="20190627 16:22:52.977" level="INFO">AP740-I-newFlash#debug syslog limit numbers 0 time 0</msg>
+<status status="PASS" starttime="20190627 16:22:52.754" endtime="20190627 16:22:52.977"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>y</arg>
+</arguments>
+<msg timestamp="20190627 16:22:53.186" level="INFO">WARNING: debug number and time will not limit, continue? (y/n) [no]: y</msg>
+<status status="PASS" starttime="20190627 16:22:52.977" endtime="20190627 16:22:53.186"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>debug syslog limit reset</arg>
+</arguments>
+<msg timestamp="20190627 16:22:53.397" level="INFO">AP740-I-newFlash#debug syslog limit reset</msg>
+<status status="PASS" starttime="20190627 16:22:53.188" endtime="20190627 16:22:53.397"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>co</arg>
+</arguments>
+<msg timestamp="20190627 16:22:53.401" level="INFO">AP740-I-newFlash#co</msg>
+<status status="PASS" starttime="20190627 16:22:53.398" endtime="20190627 16:22:53.401"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>spectral</arg>
+</arguments>
+<msg timestamp="20190627 16:22:53.453" level="INFO">Enter configuration commands, one per line.  End with CNTL/Z.</msg>
+<status status="PASS" starttime="20190627 16:22:53.402" endtime="20190627 16:22:53.454"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>spectral debug level 24</arg>
+</arguments>
+<msg timestamp="20190627 16:22:53.667" level="INFO">AP740-I-newFlash(config)#spectral</msg>
+<status status="PASS" starttime="20190627 16:22:53.454" endtime="20190627 16:22:53.667"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>spectral debug level 29</arg>
+</arguments>
+<msg timestamp="20190627 16:22:53.668" level="INFO">AP740-I-newFlash(config-spectral)#spectral debug level 24</msg>
+<status status="PASS" starttime="20190627 16:22:53.668" endtime="20190627 16:22:53.668"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:22:53.669" endtime="20190627 16:22:53.669"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20190627 16:22:58.672" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20190627 16:22:53.671" endtime="20190627 16:22:58.672"></status>
+</kw>
+<kw name="Read" library="Telnet">
+<doc>Reads everything that is currently available in the output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190627 16:22:58.690" level="INFO">AP740-I-newFlash(config-spectral)#spectral debug level 29
+AP740-I-newFlash(config-spectral)#
+AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26853973
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856572
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 16
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856622
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 17
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856683
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 15
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856731
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 6
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857446
+*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:27: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857494
+*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 8
+*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:28: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857545
+*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5
+*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:29: %P2058-7-DEBUG: ========================================</msg>
+<msg timestamp="20190627 16:22:58.690" level="INFO">${output} = AP740-I-newFlash(config-spectral)#spectral debug level 29
+AP740-I-newFlash(config-spectral)#
+AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_resul...</msg>
+<status status="PASS" starttime="20190627 16:22:58.673" endtime="20190627 16:22:58.690"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral debug level</arg>
+</arguments>
+<msg timestamp="20190627 16:22:58.699" level="INFO">no spectral debug level</msg>
+<status status="PASS" starttime="20190627 16:22:58.693" endtime="20190627 16:22:58.699"></status>
+</kw>
+<kw name="Fss Check String" library="string_compare">
+<arguments>
+<arg>${output}</arg>
+<arg>${RADIO_EQ}</arg>
+<arg>${RADIO_EQ_1}</arg>
+</arguments>
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20190627 16:22:58.700" level="INFO">str1=radio_id =
+
+arg=radio_id = 1
+
+len=77
+string_list=['AP740-I-newFlash(config-spectral)#spectral debug level 29\r', 'AP740-I-newFlash(config-spectral)#\r', 'AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26853973', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856572', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 16', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856622', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 17', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856683', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 15', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856731', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 6', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857446', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:27: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857494', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 8', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:28: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857545', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:29: %P2058-7-DEBUG: ========================================', '']
+
+-------------------------------------------------------------
+
+index=0
+no find:AP740-I-newFlash(config-spectral)#spectral debug level 29
+index=1
+no find:AP740-I-newFlash(config-spectral)#
+index=2
+no find:AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=3
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=4
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=5
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=6
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=7
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26853973
+index=8
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+index=9
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=10
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=11
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=12
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=13
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=14
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=15
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=16
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856572
+index=17
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 16
+index=18
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=19
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=20
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=21
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=22
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=23
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=24
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=25
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856622
+index=26
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 17
+index=27
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=28
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=29
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=30
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=31
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=32
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=33
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=34
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856683
+index=35
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 15
+index=36
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=37
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=38
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=39
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=40
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=41
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=42
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=43
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856731
+index=44
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 6
+index=45
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=46
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=47
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=48
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=49
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=50
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=51
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=52
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857446
+index=53
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+index=54
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=55
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=56
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=57
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: ========================================
+index=58
+find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+true:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=59
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=60
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=61
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857494
+index=62
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 8
+index=63
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=64
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=65
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=66
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: ========================================
+index=67
+find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+true:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=68
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=69
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=70
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857545
+index=71
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5
+index=72
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=73
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=74
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=75
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: ========================================
+-------------------------------------------------------------</msg>
+<msg timestamp="20190627 16:22:58.701" level="INFO">${ret} = 1</msg>
+<status status="PASS" starttime="20190627 16:22:58.700" endtime="20190627 16:22:58.701"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${ret}==1</arg>
+<arg>log</arg>
+<arg>${ret}</arg>
+<arg>ELSE</arg>
+<arg>Should Match</arg>
+<arg>${output}</arg>
+<arg>*no find ${RADIO_EQ_1}*</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ret}</arg>
+</arguments>
+<msg timestamp="20190627 16:22:58.702" level="INFO">1</msg>
+<status status="PASS" starttime="20190627 16:22:58.702" endtime="20190627 16:22:58.702"></status>
+</kw>
+<status status="PASS" starttime="20190627 16:22:58.701" endtime="20190627 16:22:58.702"></status>
+</kw>
+<kw name="Fss Check String" library="string_compare">
+<arguments>
+<arg>${output}</arg>
+<arg>freq =</arg>
+<arg>freq = 2442</arg>
+</arguments>
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20190627 16:22:58.703" level="INFO">str1=freq =
+
+arg=freq = 2442
+
+len=77
+string_list=['AP740-I-newFlash(config-spectral)#spectral debug level 29\r', 'AP740-I-newFlash(config-spectral)#\r', 'AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26853973', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856572', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 16', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856622', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 17', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856683', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 15', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856731', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 6', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857446', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:27: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857494', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 8', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:28: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857545', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:29: %P2058-7-DEBUG: ========================================', '']
+
+-------------------------------------------------------------
+
+index=0
+no find:AP740-I-newFlash(config-spectral)#spectral debug level 29
+index=1
+no find:AP740-I-newFlash(config-spectral)#
+index=2
+no find:AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=3
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=4
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=5
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=6
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=7
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26853973
+index=8
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+index=9
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=10
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=11
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=12
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=13
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=14
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=15
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=16
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856572
+index=17
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 16
+index=18
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=19
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=20
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=21
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=22
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=23
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=24
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=25
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856622
+index=26
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 17
+index=27
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=28
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=29
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=30
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=31
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=32
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=33
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=34
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856683
+index=35
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 15
+index=36
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=37
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=38
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=39
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=40
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=41
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=42
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=43
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856731
+index=44
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 6
+index=45
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=46
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=47
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=48
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=49
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=50
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=51
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=52
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857446
+index=53
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+index=54
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=55
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=56
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=57
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: ========================================
+index=58
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=59
+find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+true:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=60
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=61
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857494
+index=62
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 8
+index=63
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=64
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=65
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=66
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: ========================================
+index=67
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=68
+find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+true:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=69
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=70
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857545
+index=71
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5
+index=72
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=73
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=74
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=75
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: ========================================
+-------------------------------------------------------------</msg>
+<msg timestamp="20190627 16:22:58.704" level="INFO">${ret} = 1</msg>
+<status status="PASS" starttime="20190627 16:22:58.703" endtime="20190627 16:22:58.704"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${ret}==1</arg>
+<arg>log</arg>
+<arg>${ret}</arg>
+<arg>ELSE</arg>
+<arg>Should Match</arg>
+<arg>${output}</arg>
+<arg>*no find freq = 2442*</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ret}</arg>
+</arguments>
+<msg timestamp="20190627 16:22:58.705" level="INFO">1</msg>
+<status status="PASS" starttime="20190627 16:22:58.705" endtime="20190627 16:22:58.705"></status>
+</kw>
+<status status="PASS" starttime="20190627 16:22:58.704" endtime="20190627 16:22:58.705"></status>
+</kw>
+<kw name="Fss Check String" library="string_compare">
+<arguments>
+<arg>${output}</arg>
+<arg>ch_width =</arg>
+<arg>ch_width = 82</arg>
+</arguments>
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20190627 16:22:58.707" level="INFO">str1=ch_width =
+
+arg=ch_width = 82
+
+len=77
+string_list=['AP740-I-newFlash(config-spectral)#spectral debug level 29\r', 'AP740-I-newFlash(config-spectral)#\r', 'AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26853973', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856572', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 16', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856622', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 17', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856683', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 15', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856731', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 6', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857446', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:27: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857494', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 8', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:28: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857545', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:29: %P2058-7-DEBUG: ========================================', '']
+
+-------------------------------------------------------------
+
+index=0
+no find:AP740-I-newFlash(config-spectral)#spectral debug level 29
+index=1
+no find:AP740-I-newFlash(config-spectral)#
+index=2
+no find:AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=3
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=4
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=5
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=6
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=7
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26853973
+index=8
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+index=9
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=10
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=11
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=12
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=13
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=14
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=15
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=16
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856572
+index=17
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 16
+index=18
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=19
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=20
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=21
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=22
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=23
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=24
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=25
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856622
+index=26
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 17
+index=27
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=28
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=29
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=30
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=31
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=32
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=33
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=34
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856683
+index=35
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 15
+index=36
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=37
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=38
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=39
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=40
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=41
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=42
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=43
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856731
+index=44
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 6
+index=45
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=46
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=47
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=48
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=49
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=50
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=51
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=52
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857446
+index=53
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+index=54
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=55
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=56
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=57
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: ========================================
+index=58
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=59
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=60
+find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+true:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=61
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857494
+index=62
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 8
+index=63
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=64
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=65
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=66
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: ========================================
+index=67
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=68
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=69
+find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+true:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=70
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857545
+index=71
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5
+index=72
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=73
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=74
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=75
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: ========================================
+-------------------------------------------------------------</msg>
+<msg timestamp="20190627 16:22:58.707" level="INFO">${ret} = 1</msg>
+<status status="PASS" starttime="20190627 16:22:58.706" endtime="20190627 16:22:58.707"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${ret}==1</arg>
+<arg>log</arg>
+<arg>${ret}</arg>
+<arg>ELSE</arg>
+<arg>Should Match</arg>
+<arg>${output}</arg>
+<arg>*no find ch_width = 82*</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ret}</arg>
+</arguments>
+<msg timestamp="20190627 16:22:58.708" level="INFO">1</msg>
+<status status="PASS" starttime="20190627 16:22:58.708" endtime="20190627 16:22:58.708"></status>
+</kw>
+<status status="PASS" starttime="20190627 16:22:58.707" endtime="20190627 16:22:58.708"></status>
+</kw>
+<kw name="Fss Check String" library="string_compare">
+<arguments>
+<arg>${output}</arg>
+<arg>bin_pwr_count =</arg>
+<arg>bin_pwr_count = 213</arg>
+</arguments>
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20190627 16:22:58.709" level="INFO">str1=bin_pwr_count =
+
+arg=bin_pwr_count = 213
+
+len=77
+string_list=['AP740-I-newFlash(config-spectral)#spectral debug level 29\r', 'AP740-I-newFlash(config-spectral)#\r', 'AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26853973', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856572', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 16', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856622', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 17', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856683', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 15', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856731', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 6', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857446', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:27: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857494', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 8', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:28: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857545', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:29: %P2058-7-DEBUG: ========================================', '']
+
+-------------------------------------------------------------
+
+index=0
+no find:AP740-I-newFlash(config-spectral)#spectral debug level 29
+index=1
+no find:AP740-I-newFlash(config-spectral)#
+index=2
+no find:AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=3
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=4
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=5
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=6
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=7
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26853973
+index=8
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+index=9
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=10
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=11
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=12
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=13
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=14
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=15
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=16
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856572
+index=17
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 16
+index=18
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=19
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=20
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=21
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=22
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=23
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=24
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=25
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856622
+index=26
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 17
+index=27
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=28
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=29
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=30
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=31
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=32
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=33
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=34
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856683
+index=35
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 15
+index=36
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=37
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=38
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=39
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=40
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=41
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=42
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=43
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856731
+index=44
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 6
+index=45
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+true:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=46
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=47
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=48
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=49
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=50
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=51
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=52
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857446
+index=53
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+index=54
+find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+true:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=55
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=56
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=57
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: ========================================
+index=58
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=59
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=60
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=61
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857494
+index=62
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 8
+index=63
+find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+true:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=64
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=65
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=66
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: ========================================
+index=67
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=68
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=69
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=70
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857545
+index=71
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5
+index=72
+find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+true:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=73
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=74
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=75
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: ========================================
+-------------------------------------------------------------</msg>
+<msg timestamp="20190627 16:22:58.709" level="INFO">${ret} = 1</msg>
+<status status="PASS" starttime="20190627 16:22:58.708" endtime="20190627 16:22:58.709"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${ret}==1</arg>
+<arg>log</arg>
+<arg>${ret}</arg>
+<arg>ELSE</arg>
+<arg>Should Match</arg>
+<arg>${output}</arg>
+<arg>*no find bin_pwr_count = 213*</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ret}</arg>
+</arguments>
+<msg timestamp="20190627 16:22:58.711" level="INFO">1</msg>
+<status status="PASS" starttime="20190627 16:22:58.710" endtime="20190627 16:22:58.711"></status>
+</kw>
+<status status="PASS" starttime="20190627 16:22:58.710" endtime="20190627 16:22:58.711"></status>
+</kw>
+<kw name="Fss Check String Value" library="string_compare">
+<arguments>
+<arg>${output}</arg>
+<arg>spectral_rssi =</arg>
+</arguments>
+<assign>
+<var>${ret}</var>
+</assign>
+<msg timestamp="20190627 16:22:58.712" level="INFO">str1=spectral_rssi =
+
+len=77
+string_list=['AP740-I-newFlash(config-spectral)#spectral debug level 29\r', 'AP740-I-newFlash(config-spectral)#\r', 'AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26853973', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856572', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 16', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856622', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 17', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856683', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 15', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856731', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 6', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857446', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:27: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857494', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 8', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:28: %P2058-7-DEBUG: ========================================', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857545', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5', '*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213', '*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0', '*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]', '*Jun 27 16:24:29: %P2058-7-DEBUG: ========================================', '']
+
+-------------------------------------------------------------
+
+index=0
+no find:AP740-I-newFlash(config-spectral)#spectral debug level 29
+index=1
+no find:AP740-I-newFlash(config-spectral)#
+index=2
+no find:AP740-I-newFlash(config-spectral)#*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=3
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=4
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=5
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=6
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=7
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26853973
+index=8
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+find &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+len=2
+string_list1=['*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi ', ' 4']
+
+    index1=0
+    output:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi 
+    index1=1
+    value=4
+find end&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+index=9
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=10
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=11
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=12
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=13
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=14
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=15
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=16
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856572
+index=17
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 16
+find &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+len=2
+string_list1=['*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi ', ' 16']
+
+    index1=0
+    output:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi 
+    index1=1
+    value=16
+find end&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+index=18
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=19
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=20
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=21
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=22
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=23
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=24
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=25
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856622
+index=26
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 17
+find &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+len=2
+string_list1=['*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi ', ' 17']
+
+    index1=0
+    output:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi 
+    index1=1
+    value=17
+find end&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+index=27
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=28
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=29
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=30
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=31
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=32
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=33
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=34
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856683
+index=35
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 15
+find &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+len=2
+string_list1=['*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi ', ' 15']
+
+    index1=0
+    output:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi 
+    index1=1
+    value=15
+find end&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+index=36
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=37
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=38
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=39
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=40
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=41
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=42
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=43
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26856731
+index=44
+find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 6
+find &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+len=2
+string_list1=['*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi ', ' 6']
+
+    index1=0
+    output:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi 
+    index1=1
+    value=6
+find end&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+index=45
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=46
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=47
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=48
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: ========================================
+index=49
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=50
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=51
+no find:*Jun 27 16:24:26: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=52
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857446
+index=53
+find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+find &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+len=2
+string_list1=['*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi ', ' 4']
+
+    index1=0
+    output:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi 
+    index1=1
+    value=4
+find end&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+index=54
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=55
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=56
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=57
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: ========================================
+index=58
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=59
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=60
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=61
+no find:*Jun 27 16:24:27: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857494
+index=62
+find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 8
+find &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+len=2
+string_list1=['*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi ', ' 8']
+
+    index1=0
+    output:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi 
+    index1=1
+    value=8
+find end&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+index=63
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=64
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=65
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=66
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: ========================================
+index=67
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+index=68
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+index=69
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+index=70
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857545
+index=71
+find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5
+find &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+len=2
+string_list1=['*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi ', ' 5']
+
+    index1=0
+    output:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi 
+    index1=1
+    value=5
+find end&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+index=72
+no find:*Jun 27 16:24:28: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+index=73
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+index=74
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+index=75
+no find:*Jun 27 16:24:29: %P2058-7-DEBUG: ========================================
+index=76
+no find:
+-------------------------------------------------------------</msg>
+<msg timestamp="20190627 16:22:58.712" level="INFO">${ret} = 1</msg>
+<status status="PASS" starttime="20190627 16:22:58.711" endtime="20190627 16:22:58.712"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${ret}==1</arg>
+<arg>log</arg>
+<arg>${ret}</arg>
+<arg>ELSE</arg>
+<arg>Should Match</arg>
+<arg>${output}</arg>
+<arg>*no find spectral_rssi = x*</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ret}</arg>
+</arguments>
+<msg timestamp="20190627 16:22:58.713" level="INFO">1</msg>
+<status status="PASS" starttime="20190627 16:22:58.713" endtime="20190627 16:22:58.713"></status>
+</kw>
+<status status="PASS" starttime="20190627 16:22:58.713" endtime="20190627 16:22:58.713"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20190627 16:23:03.715" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20190627 16:22:58.714" endtime="20190627 16:23:03.715"></status>
+</kw>
+<doc>配置频宽，使能radio1的频谱检测</doc>
+<status status="PASS" starttime="20190627 16:22:50.581" endtime="20190627 16:23:03.715" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Test end and reset configure">
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:23:03.717" endtime="20190627 16:23:03.717"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:23:03.717" endtime="20190627 16:23:03.718"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190627 16:23:03.933" level="INFO">WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190627 16:23:03.718" endtime="20190627 16:23:03.933"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 1</arg>
+</arguments>
+<msg timestamp="20190627 16:23:03.952" level="INFO">no spectral enable radio 1</msg>
+<status status="PASS" starttime="20190627 16:23:03.934" endtime="20190627 16:23:03.953"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 2</arg>
+</arguments>
+<msg timestamp="20190627 16:23:04.012" level="INFO">WS5308(config-ap)#no spectral enable radio 2</msg>
+<status status="PASS" starttime="20190627 16:23:03.953" endtime="20190627 16:23:04.013"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable radio 3</arg>
+</arguments>
+<msg timestamp="20190627 16:23:04.082" level="INFO">WS5308(config-ap)#no spectral enable radio 3</msg>
+<status status="PASS" starttime="20190627 16:23:04.013" endtime="20190627 16:23:04.082"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral enable</arg>
+</arguments>
+<msg timestamp="20190627 16:23:04.152" level="INFO">WS5308(config-ap)#no spectral enable</msg>
+<status status="PASS" starttime="20190627 16:23:04.083" endtime="20190627 16:23:04.153"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no device mode</arg>
+</arguments>
+<msg timestamp="20190627 16:23:04.413" level="INFO">WS5308(config-ap)#no device mode</msg>
+<status status="PASS" starttime="20190627 16:23:04.153" endtime="20190627 16:23:04.414"></status>
+</kw>
+<kw name="Read Until Prompt" library="Telnet">
+<doc>Reads output until the prompt is encountered.</doc>
+<msg timestamp="20190627 16:23:04.415" level="INFO">WS5308(config-ap)#</msg>
+<status status="PASS" starttime="20190627 16:23:04.414" endtime="20190627 16:23:04.415"></status>
+</kw>
+<kw name="Execute Command" library="Telnet">
+<doc>Executes the given ``command`` and reads, logs, and returns everything until the prompt.</doc>
+<arguments>
+<arg>show ap-config running ${AP_NAME}</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190627 16:23:04.438" level="INFO">show ap-config running AP740-I-newFlash</msg>
+<msg timestamp="20190627 16:23:04.944" level="INFO">Building configuration...
+Current configuration: 177 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+ wlan-cap enable 1
+ channel 157 radio 2
+ chan-width 40 radio 1
+ chan-width 40 radio 2
+ chan-width 40 radio 3
+!
+end
+WS5308(config-ap)#</msg>
+<msg timestamp="20190627 16:23:04.944" level="INFO">${output} = 
+Building configuration...
+Current configuration: 177 bytes
+
+!
+ap-config AP740-I-newFlash
+ ap-mac 00d0.f822.334c
+ wlan-cap enable 1
+ channel 157 radio 2
+ chan-width 40 radio 1
+ cha...</msg>
+<status status="PASS" starttime="20190627 16:23:04.416" endtime="20190627 16:23:04.944"></status>
+</kw>
+<kw name="Should Not Match" library="BuiltIn">
+<doc>Fails if the given ``string`` matches the given ``pattern``.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>*spectral enable*</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:23:04.946" endtime="20190627 16:23:04.947"></status>
+</kw>
+<kw name="Switch Connection" library="Telnet">
+<doc>Switches between active connections using an index or an alias.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:23:04.948" endtime="20190627 16:23:04.949"></status>
+</kw>
+<kw name="Write Bare" library="Telnet">
+<doc>Writes the given text, and nothing else, into the connection.</doc>
+<arguments>
+<arg>\r\n</arg>
+</arguments>
+<status status="PASS" starttime="20190627 16:23:04.951" endtime="20190627 16:23:04.951"></status>
+</kw>
+<kw name="Read" library="Telnet">
+<doc>Reads everything that is currently available in the output.</doc>
+<msg timestamp="20190627 16:23:04.967" level="INFO">AP740-I-newFlash(config-spectral)#*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857595
+*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:29: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:30: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:30: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:30: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:30: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:30: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:30: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857740
+*Jun 27 16:24:30: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5
+*Jun 27 16:24:30: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:30: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:30: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:30: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:31: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:31: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:31: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:31: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857767
+*Jun 27 16:24:31: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+*Jun 27 16:24:31: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:31: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:31: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:31: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:31: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:31: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:32: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:32: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857794
+*Jun 27 16:24:32: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+*Jun 27 16:24:32: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:32: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:32: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:32: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:32: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:32: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:32: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:33: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857822
+*Jun 27 16:24:33: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 5
+*Jun 27 16:24:33: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:33: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:33: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:33: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:33: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:33: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:33: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:33: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857851
+*Jun 27 16:24:33: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+*Jun 27 16:24:34: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:34: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:34: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:34: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:34: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:34: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:34: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82
+*Jun 27 16:24:34: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857879
+*Jun 27 16:24:34: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][106]spectral_rssi = 4
+*Jun 27 16:24:34: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][107]bin_pwr_count = 213
+*Jun 27 16:24:35: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][108]interf_list count = 0
+*Jun 27 16:24:35: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][101]
+*Jun 27 16:24:35: %P2058-7-DEBUG: ========================================
+*Jun 27 16:24:35: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][102]radio_id = 1
+*Jun 27 16:24:35: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][103]freq = 2442
+*Jun 27 16:24:35: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][104]ch_width = 82</msg>
+<status status="PASS" starttime="20190627 16:23:04.952" endtime="20190627 16:23:04.967"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>no spectral debug level</arg>
+</arguments>
+<msg timestamp="20190627 16:23:05.173" level="INFO">AP740-I-newFlash(config-spectral)#no spectral debug level</msg>
+<status status="PASS" starttime="20190627 16:23:04.968" endtime="20190627 16:23:05.174"></status>
+</kw>
+<kw name="Write" library="Telnet">
+<doc>Writes the given text plus a newline into the connection.</doc>
+<arguments>
+<arg>end</arg>
+</arguments>
+<msg timestamp="20190627 16:23:05.175" level="INFO">AP740-I-newFlash(config-spectral)#*Jun 27 16:24:35: %P2058-7-DEBUG: [classifiler][rj_fss_dbg_dump_result][105]spectral_tstamp = 26857969</msg>
+<status status="PASS" starttime="20190627 16:23:05.174" endtime="20190627 16:23:05.175"></status>
+</kw>
+<status status="PASS" starttime="20190627 16:23:03.717" endtime="20190627 16:23:05.176" critical="yes"></status>
+</test>
+<kw name="Close All Connections" library="Telnet" type="teardown">
+<doc>Closes all open connections and empties the connection cache.</doc>
+<status status="PASS" starttime="20190627 16:23:05.177" endtime="20190627 16:23:05.177"></status>
+</kw>
+<status status="PASS" starttime="20190627 16:22:46.141" endtime="20190627 16:23:05.177"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Spectral Case1 01 2.4G">Spectral Case1 01 2.4G</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
